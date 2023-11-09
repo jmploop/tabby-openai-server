@@ -1,0 +1,27 @@
+### completion
+POST {{base_url}}/v1/completions
+Content-Type: application/json
+Accept: application/json
+
+{
+  "language": "python",
+  "segments": {
+    "prefix": "def fib(n):\n    ",
+    "suffix": "\n        return fib(n - 1) + fib(n - 2)"
+  }
+}
+
+### event
+POST {{base_url}}/v1/events
+Content-Type: application/json
+Accept: application/json
+
+{
+  "type": "view",
+  "completion_id": "string",
+  "choice_index": 0
+}
+
+### health
+POST {{base_url}}/v1/health
+Accept: application/json
